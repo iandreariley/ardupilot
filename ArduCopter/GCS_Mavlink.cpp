@@ -1429,7 +1429,35 @@ void GCS_MAVLINK_Copter::handleMessage(mavlink_message_t* msg)
 
             break;
         }
+#ifdef FAKE_GPS
+#if FAKE_GPS == ENABLED
+	case MAVLINK_MSG_ID_GPS_RAW_INT:
 
+	  mavlink_gps_raw_int_t packet;
+
+	  mavlink_msg_gps_raw_int_decode(msg, &packet);
+
+	  // set gps hil sensor
+	  Location loc;
+	  loc.lat = packet.lat;
+	  loc.lng = packet.lon;
+	  loc.alt = packet.alt;
+	  // loc.alt = packet.alt/10;
+
+	  // hardcode gps data to current location
+	  current_loc = loc;
+        
+	  // current velocity ???
+	  Vector3f vel(0, 0, 0);
+	  vel *= 0.01f;
+
+	  gps.setHIL(0, AP_GPS::GPS_OK_FIX_3D,
+		     packet.time_usec/1000,
+		     loc, vel, 10, 0, true);
+
+	  break;
+#endif
+#endif
         /* Solo user presses Fly button */
         case MAV_CMD_SOLO_BTN_FLY_CLICK: {
             result = MAV_RESULT_ACCEPTED;

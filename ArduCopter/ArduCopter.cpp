@@ -524,8 +524,8 @@ void Copter::update_GPS(void)
 {
     static uint32_t last_gps_reading[GPS_MAX_INSTANCES];   // time of last gps message
     bool gps_updated = false;
-
-    gps.update();
+    // NO GPS DOG!
+    //gps.update();
 
     // log after every gps message
     for (uint8_t i=0; i<gps.num_sensors(); i++) {
