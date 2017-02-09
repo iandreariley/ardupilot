@@ -10,6 +10,8 @@ Have you never written a line of code in your life? Then this is for you! The pa
 
 To copy a version of all this Ardupilot code to your computer, run the following command in a command line:
 
-~~~~git clone --recursive https://github.com/iandreariley/ardupilot~~~~
+~~~~
+git clone --recursive https://github.com/iandreariley/ardupilot
+~~~~
 
 
