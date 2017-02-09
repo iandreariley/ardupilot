@@ -6,7 +6,7 @@ Main Project is [here](https://github.com/ArduPilot/ardupilot/)
 
 ### How to Make It Do Right ###
 
-Have you never written a line of code in your life? Then this is for you! The page you're looking at is the root directory of a github repository. It's a place where you can store information (usually code) and share it with people. It uses a program called Git that manages different version of projects (e.g. source code) across several locations. You will need to install git, which you can get here: [code](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+Have you never written a line of code in your life? Then this is for you! The page you're looking at is the root directory of a github repository. It's a place where you can store information (usually code) and share it with people. It uses a program called Git that manages different version of projects (e.g. source code) across several locations. You will need to install git, which you can get [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 To copy a version of all this Ardupilot code to your computer, run the following command in a command line:
 
